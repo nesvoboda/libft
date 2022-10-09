@@ -15,11 +15,18 @@
 
 static int	count_digits(int n)
 {
-	int digits;
+	int	digits;
 
 	if (n == 0)
 		return (1);
-	digits = n < 0 ? 1 : 0;
+	if (n < 0)
+	{
+		digits = 1;
+	}
+	else
+	{
+		digits = 0;
+	}
 	while (n != 0)
 	{
 		n = n / 10;
@@ -28,7 +35,7 @@ static int	count_digits(int n)
 	return (digits);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*result;
 	int				digits;
